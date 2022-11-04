@@ -1,0 +1,42 @@
+
+<div class="container">
+   <div class="row">
+    <div class="col-md-12">
+        <app-users></app-users><hr>
+    <!-- </div>
+   </div>
+</div> -->
+<h2>User Details</h2>
+<table>
+    <thead>
+      <tr>
+        <th>firstName</th>
+        <th>lastName</th>
+        <th>age</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let People of data">
+      <td>{{People.firstName}}</td>
+      <td>{{People.lastName}}</td>
+      <td>{{People.age}}</td>
+      </tr>
+    </tbody>
+  </table><hr>
+  <div>
+
+</div>
+</div>
+</div>
+
+<div>
+  <label>DOB: </label>
+   <input type="date" #dobInput (blur)="calculateAge()">
+  </div>
+ 
+  <div>
+   <label>Age: </label>
+   <input type="text" #ageInput>
+  </div> 
+  {{ usersComp.sayHello()}}
+  

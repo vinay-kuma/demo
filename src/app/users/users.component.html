@@ -1,0 +1,81 @@
+
+<div class="row">
+ <div class="col-md-12">
+    <h3>Users List</h3>
+    <div *ngIf="selectedUser">Selected User: {{selectedUser.name}}</div>
+     <div class="row">
+  <app-user *ngFor="let user of users; trackBy: trackUser"   
+  (userSelected)="onUserSelect($event)" 
+  [user]="user">
+  <!-- <tr *ngFor='let activity of pagedWorkflowActivities' style="background-color:{{activity.status == 'Pending' ? 'red' : 'green'}}">
+    [style.background-color]="onUserSelect.status == 'Pending' ? 'red' : 'green'"
+    </tr> -->
+</app-user>
+      </div>
+    </div>
+  </div> 
+
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit">
+
+    <div class="row">
+      <div class="col text-center">
+          <span class="fs-3">Enter Details</span>
+      </div>
+  </div>
+  
+  <div class="row">
+    <div class="col mb-3">
+        <label for="name" class="form-label"> Name</label>
+        <input type="text" style="text-transform: uppercase" class="form-control" id="name"
+        formControlName="name">
+    </div>
+  
+    <div class="row">
+      <div class="col mb-3">
+     <label for="human">human</label>
+     <input type="checkbox" id="human" name="human" formControlName="human">
+     <div class="form-text"></div>
+      </div>
+      </div>
+  
+    
+      <p>
+        <label for="country">country </label>
+        <select id="country" name="country" formControlName="country">
+          <option value="1">USA</option>
+          <option value="2">England</option>
+          <option value="3">China</option>
+          <option value="4">India</option>
+        </select>
+      </p>
+  
+     <p>
+          <button type="submit" class="btn btn-primary">Submit</button>
+      </p>
+       
+       
+<!-- <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <div formGroupName="personalData">
+      <p>Enter Data</p>
+      
+      <input type="text" style="text-transform: uppercase" formControlName="name" /> 
+      <p>
+      <label>human</label>
+      <input type="checkbox" /> 
+      </p>
+     
+    </div>
+    <div><label>Country : </label>
+        <select formControlName="country">
+            <option *ngFor="let country of countries" [value]="country">{{country}}</option
+            >
+          </select>
+    </div>
+   
+ 
+<p>
+  <button class="btn btn-primary" button type="submit">Submit</button>
+</p>
+
+ 
+  </form> -->
